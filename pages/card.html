@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stickers Shop</title>
+    <link rel="stylesheet" href="../css/card.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <a href="index.html">
+            <img src="./assets/images/logo.png" alt="" width="125px"
+          /></a>
+        </div>
+        <nav>
+          <ul id="MenuItems">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="card.html">Card</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <a href="cart.html"
+          ><img
+            src="./assets/images/cart.png"
+            alt=""
+            width="30px"
+            height="30px"
+        /></a>
+        <img
+          src="./assets/images/menu.png"
+          alt=""
+          class="menu-icon"
+          onclick="menutoggle()"
+        />
+      </div>
+    </div>
+
+    <!-- Cart Items Details -->
+    <div class="small-container cart-page">
+      <table>
+        <tr>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Subtotal</th>
+        </tr>
+        <tr>
+          <td>
+            <div class="cart-info">
+              <img src="./assets/images/buy-1.jpg" alt="" />
+              <div>
+                <p>Red Printed T-shirt</p>
+                <small>Price: $50.00</small>
+                <br />
+                <a href="">Remove</a>
+              </div>
+            </div>
+          </td>
+          <td><input type="nunber" value="1" /></td>
+          <td>$50.00</td>
+        </tr>
+
+        <tr>
+          <td>
+            <div class="cart-info">
+              <img src="./assets/images/buy-2.jpg" alt="" />
+              <div>
+                <p>Red Printed T-shirt</p>
+                <small>Price: $50.00</small>
+                <br />
+                <a href="">Remove</a>
+              </div>
+            </div>
+          </td>
+          <td><input type="nunber" value="1" /></td>
+          <td>$50.00</td>
+        </tr>
+
+        <tr>
+          <td>
+            <div class="cart-info">
+              <img src="./assets/images/buy-3.jpg" alt="" />
+              <div>
+                <p>Red Printed T-shirt</p>
+                <small>Price: $50.00</small>
+                <br />
+                <a href="">Remove</a>
+              </div>
+            </div>
+          </td>
+          <td><input type="nunber" value="1" /></td>
+          <td>$50.00</td>
+        </tr>
+      </table>
+
+      <div class="total-price">
+        <table>
+          <tr>
+            <td>Subtotal</td>
+            <td>$200.00</td>
+          </tr>
+          <tr>
+            <td>Tax</td>
+            <td>$30.00</td>
+          </tr>
+          <tr>
+            <td>Total</td>
+            <td>$230.00</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <!-- Footer -->
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col-1">
+            <h3>Download Our App</h3>
+            <p>
+              Download App for Android <br />
+              and ios mobile phone
+            </p>
+            <div class="app-logo">
+              <img src="./assets/images/play-store.png" alt="" />
+              <img src="./assets/images/app-store.png" alt="" />
+            </div>
+          </div>
+          <div class="footer-col-2">
+            <img src="./assets/images/logo-white.png" alt="" />
+            <p>
+              Lorem, ipsum dolor sit amet consectetur <br />adipisicing elit.
+              Porro, eum?
+            </p>
+          </div>
+          <div class="footer-col-3">
+            <h3>Useful Links</h3>
+            <ul>
+              <li>Coupons</li>
+              <li>Blog Post</li>
+              <li>Return Policy</li>
+              <li>Join Affiliate</li>
+            </ul>
+          </div>
+
+          <div class="footer-col-4">
+            <h3>Follow us</h3>
+            <ul>
+              <li>Facebook</li>
+              <li>Twitter</li>
+              <li>Instagram</li>
+              <li>YouTube</li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+        <p class="copyright" id="copyright-text">Copyright 2020 - introidx</p>
+      </div>
+    </div>
+    <!-- JS for Toggle menu -->
+    <script src="./assets/js/toggleMenu.js"></script>
+  </body>
+</html>
