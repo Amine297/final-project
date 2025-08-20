@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sticker Shop</title>
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="../css/shop.css" />
     <style>
       /* Tu peux déplacer ça dans style.css */
       .sort-buttons {
@@ -34,6 +34,7 @@
         Sort by price: High to Low
       </button>
     </div>
+
     <!-- LISTE DES PRODUITS -->
     <section class="product-list" id="product-list">
       <div class="product" data-price="3">
@@ -84,25 +85,26 @@
         <button onclick="addToCart('Happy Sticker', 4.00)">Add to Cart</button>
       </div>
     </section>
+
     <!-- SCRIPT DE TRI -->
     <script>
       function trierProduits(direction) {
-        const liste = document.getElementById('product-list');
-        const produits = Array.from(liste.getElementsByClassName('product'));
+        const liste = document.getElementById("product-list");
+        const produits = Array.from(liste.getElementsByClassName("product"));
 
         produits.sort((a, b) => {
           const prixA = parseFloat(a.dataset.price);
           const prixB = parseFloat(b.dataset.price);
-          return direction === 'asc' ? prixA - prixB : prixB - prixA;
+          return direction === "asc" ? prixA - prixB : prixB - prixA;
         });
 
         // Réinjection des produits triés
-        produits.forEach(p => liste.appendChild(p));
+        produits.forEach((p) => liste.appendChild(p));
       }
 
       // Fonction fictive si non définie ailleurs
       function addToCart(nom, prix) {
-        alert(${nom} ajouté au panier pour $${prix.toFixed(2)});
+        alert(`${nom} ajouté au panier pour $${prix.toFixed(2)}`);
       }
     </script>
   </body>
