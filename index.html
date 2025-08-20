@@ -2,24 +2,41 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stickers Shop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sticker Shop</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header class="site-header">
-      <div class="container">
-        <h1 class="logo">Sticker Shop</h1>
-        <nav class="nav">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="pages/shop.html">Shop</a></li>
-            <li><a href="pages/cart.html">Cart</a></li>
-            <li><a href="pages/">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
+    <header>
+      <div class="logo">Sticker Shop</div>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="pages/shop.html">Shop</a></li>
+          <li><a href="pages/cart.html">Cart</a></li>
+          <li><a href="pages/contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Express Yourself with Stickers</h1>
+          <p>Discover unique, colorful stickers that brighten your day.</p>
+          <a href="pages/shop.html" class="btn-shop">Shop Now</a>
+        </div>
+      </section>
+
+      <section class="featured-section">
+        <h2>Featured Stickers</h2>
+        <div class="products-grid" id="featured-products">
+          <!-- Products will be injected by JS -->
+        </div>
+      </section>
+    </main>
+
+    <footer>&copy; 2025 Sticker Shop. All rights reserved.</footer>
 
     <script src="script.js"></script>
   </body>

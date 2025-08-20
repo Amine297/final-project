@@ -3,8 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stickers Shop</title>
-    <link rel="stylesheet" href="../style.css" />
+    <title>Sticker Shop</title>
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+      /* Tu peux déplacer ça dans style.css */
+      .sort-buttons {
+        margin: 20px;
+      }
+    </style>
   </head>
   <body>
     <header class="site-header">
@@ -13,30 +19,91 @@
         <nav class="nav">
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="pages/shop.html">Shop</a></li>
-            <li><a href="pages/cart.html">Cart</a></li>
-            <li><a href="pages/contact">Contact</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="card.html">Card</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
-    <section class="product-list">
-      <div class="product">
-        <img src="images/sticker1.png" alt="Sticker 1" />
+    <!-- BOUTONS DE TRI -->
+    <div class="sort-buttons">
+      <button onclick="trierProduits('asc')">Sort by price: Low to High</button>
+      <button onclick="trierProduits('desc')">
+        Sort by price: High to Low
+      </button>
+    </div>
+    <!-- LISTE DES PRODUITS -->
+    <section class="product-list" id="product-list">
+      <div class="product" data-price="3">
+        <img src="/stickers proj final/cool-cool-emoji.gif" alt="Sticker 1" />
         <h2>Cool Sticker</h2>
         <p>$3.00</p>
         <button onclick="addToCart('Cool Sticker', 3.00)">Add to Cart</button>
       </div>
 
-      <div class="product">
-        <img src="images/sticker2.png" alt="Sticker 2" />
+      <div class="product" data-price="4">
+        <img
+          src="/stickers proj final/cab0edfa-eda1-465a-a6bc-fdc8ade1ce24.webp"
+          alt="Sticker 2"
+        />
         <h2>Funny Sticker</h2>
         <p>$4.00</p>
         <button onclick="addToCart('Funny Sticker', 4.00)">Add to Cart</button>
       </div>
-    </section>
 
-    <script src="script.js"></script>
+      <div class="product" data-price="3">
+        <img src="/stickers proj final/sad.jpg" alt="Sticker 3" />
+        <h2>Sad Sticker</h2>
+        <p>$3.00</p>
+        <button onclick="addToCart('Sad Sticker', 3.00)">Add to Cart</button>
+      </div>
+
+      <div class="product" data-price="4">
+        <img src="/stickers proj final/angry.jpg" alt="Sticker 4" />
+        <h2>Angry Sticker</h2>
+        <p>$4.00</p>
+        <button onclick="addToCart('Angry Sticker', 4.00)">Add to Cart</button>
+      </div>
+
+      <div class="product" data-price="5">
+        <img src="/stickers proj final/crying.jpg" alt="Sticker 5" />
+        <h2>Crying Sticker</h2>
+        <p>$5.00</p>
+        <button onclick="addToCart('Crying Sticker', 5.00)">Add to Cart</button>
+      </div>
+
+      <div class="product" data-price="4">
+        <img
+          src="/stickers proj final/Emoji-Doing-Thumb-Up-vinyl-sticker.jpg"
+          alt="Sticker 6"
+        />
+        <h2>Happy Sticker</h2>
+        <p>$4.00</p>
+        <button onclick="addToCart('Happy Sticker', 4.00)">Add to Cart</button>
+      </div>
+    </section>
+    <!-- SCRIPT DE TRI -->
+    <script>
+      function trierProduits(direction) {
+        const liste = document.getElementById('product-list');
+        const produits = Array.from(liste.getElementsByClassName('product'));
+
+        produits.sort((a, b) => {
+          const prixA = parseFloat(a.dataset.price);
+          const prixB = parseFloat(b.dataset.price);
+          return direction === 'asc' ? prixA - prixB : prixB - prixA;
+        });
+
+        // Réinjection des produits triés
+        produits.forEach(p => liste.appendChild(p));
+      }
+
+      // Fonction fictive si non définie ailleurs
+      function addToCart(nom, prix) {
+        alert(${nom} ajouté au panier pour $${prix.toFixed(2)});
+      }
+    </script>
   </body>
 </html>
