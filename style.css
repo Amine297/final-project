@@ -109,7 +109,7 @@ justify-content: space-between;
   background-color: #f0c040;
   transform: scale(1.05);
 }
-
+/*hihhh*/
 @media (max-width:700px) {
   .product-list{
    grid-template-columns: 1fr;
