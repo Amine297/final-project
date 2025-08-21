@@ -2,8 +2,8 @@ let featuredProducts = JSON.parse(localStorage.getItem("panier"));
 
 // If nothing in localStorage, use default and save to localStorage
 if (!featuredProducts) {
-  featuredProducts = defaultProducts;
-  localStorage.setItem("panier", JSON.stringify(defaultProducts));
+  featuredProducts = [];
+  localStorage.setItem("panier", JSON.stringify(featuredProducts));
 }
 
 const productsGrid = document.getElementById("cart-items");
