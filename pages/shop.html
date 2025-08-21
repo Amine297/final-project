@@ -18,9 +18,9 @@
         <h1 class="logo">Sticker Shop</h1>
         <nav class="nav">
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="shop.html">Shop</a></li>
-            <li><a href="card.html">Card</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="shop.html" class="active">Shop</a></li>
+            <li><a href="cart.html">cart</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
@@ -104,6 +104,16 @@
 
       // Fonction fictive si non définie ailleurs
       function addToCart(nom, prix) {
+        // Récupérer le panier depuis localStorage (ou créer un panier vide s'il n'existe pas)
+        let panier = JSON.parse(localStorage.getItem("panier")) || [];
+
+        // Ajouter le nouvel article au panier
+        panier.push({ nom: nom, prix: prix });
+
+        // Sauvegarder le panier mis à jour dans localStorage
+        localStorage.setItem("panier", JSON.stringify(panier));
+
+        // Message de confirmation
         alert(`${nom} ajouté au panier pour $${prix.toFixed(2)}`);
       }
     </script>
